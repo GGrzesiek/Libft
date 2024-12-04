@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:02:58 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 15:54:12 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:36:12 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 void *memset(void *s, int c, size_t n)
 {	
+	unsigned char *p;
 	while(n > 0)
 	{
-		printf("%c",s);
-		s = c;
+		//printf("%c",s);
+		
+		*p = (unsigned char)c;
 		n--;
-		s++;
+		p++;
 	}
 	return s;
 }
