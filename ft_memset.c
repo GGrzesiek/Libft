@@ -6,23 +6,22 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:02:58 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 17:36:12 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:35:02 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
 
-void *memset(void *s, int c, size_t n)
-{	
-	unsigned char *p;
-	while(n > 0)
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*p;
+
+	*p = s;
+	while (n > 0)
 	{
-		//printf("%c",s);
-		
 		*p = (unsigned char)c;
 		n--;
 		p++;
 	}
-	return s;
+	return (s);
 }

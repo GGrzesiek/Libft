@@ -6,25 +6,24 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:05:49 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 15:32:00 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:55:48 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	int is_alnum;
-	is_alnum = 1;
+	int	is_alnum;
 
-	if(!(c >= 65 && c <= 90))
+	is_alnum = 1;
+	if (!(c >= 65 && c <= 90))
 	{
-		if(!(c >= 97 && c <= 122))
+		if (!(c >= 97 && c <= 122))
 		{
-			if(!(c >= 48 && c <= 57))
+			if (!(c >= 48 && c <= 57))
 			{
 				is_alnum = 0;
 			}
 		}
 	}
-
-	return is_alnum;
+	return (is_alnum);
 }

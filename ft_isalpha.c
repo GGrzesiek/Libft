@@ -6,21 +6,21 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:14:38 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 15:32:06 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:30:06 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	int is_alpha;
-	is_alpha = 1;
+	int	is_alpha;
 
-	if(!(c >= 65 && c <= 90))
+	is_alpha = 1;
+	if (!(c >= 65 && c <= 90))
 	{
-		if(!(c >= 97 && c <= 122))
+		if (!(c >= 97 && c <= 122))
 		{
 			is_alpha = 0;
 		}
 	}
-	return is_alpha;
+	return (is_alpha);
 }

@@ -6,11 +6,10 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:41:53 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 13:41:58 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:56:42 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	
 }

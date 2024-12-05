@@ -6,22 +6,21 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:18:05 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/04 15:39:55 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:33:38 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	int is_print;
-	
+	int	is_print;
+
 	is_print = 1;
-	if(!((c >= 32) && (c <= 126)))
+	if (!((c >= 32) && (c <= 126)))
 	{
-		if(!(c == 32))
+		if (!(c == 32))
 		{
 			is_print = 0;
 		}
 	}
-
-	return is_print;
+	return (is_print);
 }
