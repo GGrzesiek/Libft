@@ -6,11 +6,11 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:01:18 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/10 15:01:31 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:55:39 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -27,6 +27,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-
 	return (src_len);
 }

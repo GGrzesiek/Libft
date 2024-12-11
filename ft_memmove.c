@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:14:12 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/05 16:55:19 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:54:16 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 	unsigned char		*t;
-	size_t	siz;
+	size_t				siz;
 
 	if (dest == NULL || src == NULL)
 		return (NULL);

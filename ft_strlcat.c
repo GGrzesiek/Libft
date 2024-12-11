@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:41:53 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/10 15:47:29 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:54:49 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i + dest_len] = '\0';
-
 	return (src_len + dest_len);
 }

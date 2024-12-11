@@ -6,17 +6,17 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:49:51 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/10 15:55:22 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:56:17 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{
-		c -= 32;	
+		c -= 32;
 	}
 	return (c);
 }
