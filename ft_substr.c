@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 11:35:14 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/17 15:10:22 by gkryszcz         ###   ########.fr       */
+/*   Created: 2024/12/17 12:20:54 by gkryszcz          #+#    #+#             */
+/*   Updated: 2024/12/17 15:28:16 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*dup;
-	size_t	len;
+	char	*sub;
+	int		i;
 
-	if (!s)
+	i = 0;
+	sub = (char *)malloc(len);
+	if (!sub)
 		return (NULL);
-	len = ft_strlen(s) + 1;
-	dup = (char *)malloc(len);
-	if (!dup)
-		return (NULL);
-	ft_strlcpy(dup, s, len);
-	return (dup);
+	s += start;
+	while (i < len && s[i] != '\0')
+	{
+		sub[i] = s[i];
+		i++;
+	}
+	return (sub);
 }
 
 /* int main(void)
 {
-   char *string = "this is a copy";
+   char *string = "this is123 a copy";
    char *newstr;
-   if ((newstr = ft_strdup(string)) != NULL)
+   if ((newstr = ft_substr(string,5,5)) != NULL)
       printf("The new string is: %s\n", newstr);
    return (0);
 } */

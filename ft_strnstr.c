@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:15:06 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/11 15:25:20 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:10:24 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		i++;
 		len--;
 	}
-	return NULL;
+	return (NULL);
 }
