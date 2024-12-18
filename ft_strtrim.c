@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:29:44 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/18 13:00:51 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:40:49 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static int	is_in_set(char c, char const *set)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *newstr;
-	int start;
-	int end;
-	int i;
-	
+	char	*newstr;
+	int		start;
+	int		end;
+	int		i;
+
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
@@ -52,11 +52,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	newstr[i] = 0;
 	return (newstr);
 }
-
+/* 
 int	main(void)
 {
 	char *x;
-	x = ft_strtrim(" 121 XD  ", " ");
+	x = ft_strtrim(" 1212grzechu12    ewf", "12");
 	printf("|%s|\n", x);
 	free(x);
-}
+} */
