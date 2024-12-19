@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:52:39 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/11 15:07:57 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:17:56 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,16 @@ int	ft_atoi(const char *nptr)
 		res = -res;
 	return (res);
 }
+
+/* int	main(void)
+{
+	int num;
+	char *string;
+
+	string = "-214748364854234234234";
+	// num = ft_atoi(string);
+	// printf("string = %d\n", num);
+	num = atoi(string);
+	printf("string = %d\n", num);
+	return (0);
+} */

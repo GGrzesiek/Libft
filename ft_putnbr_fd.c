@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 12:02:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 14:21:07 by gkryszcz         ###   ########.fr       */
+/*   Created: 2024/12/19 14:05:00 by gkryszcz          #+#    #+#             */
+/*   Updated: 2024/12/19 14:09:20 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void ft_putnbr_fd(int n, int fd)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
+	char *str;
+	int i;
 
-	str1 = s1;
-	str2 = s2;
-	while (n--)
+	str = ft_itoa(n);
+	i = 0;
+	while(str[i])
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
+		write(fd, &str[i], 1);
+		i++;
 	}
-	return (0);
 }
 
-/* int main()
+int main()
 {
-	char	str[] = {0, 1, 65, 3, 4, 5};
-	char	str2[] = {0, 1, 43, 3, 4, 5};
-	
-	printf("%d\n", ft_memcmp(str, str2, 2));
-	printf("%d\n", memcmp(str, str2, 2));
-
-}  */
+	ft_putnbr_fd(123,2);
+}

@@ -1,107 +1,103 @@
-    #include <stdlib.h>
-    #include <stdio.h>
-    // #include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/19 10:33:56 by gkryszcz          #+#    #+#             */
+/*   Updated: 2024/12/19 12:55:00 by gkryszcz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    int nbr_lng(long int nb)
-    {
-        int i;
+#include "libft.h"
 
-        i = 1;
-        while(i < nb)
-        {
-            nb = nb/10;
-            i++;
-        }
-        return (i);
-    }
+int	sign_check(long int *tmp)
+{
+	if (*tmp < 0)
+	{
+		*tmp = (*tmp) * -1;
+		return (1);
+	}
+	return (0);
+}
 
-    char    ft_putnbr(long int nb)
-    {
-        while (nb > 9)
-        {
-            nb = nb / 10;
-        }
-        if (nb < 10)
-            return(nb + '0');
-        return(0);
-    }
+int	num_len(long int n)
+{
+	int	len;
 
-    int power(long int nb, int pow)
-    {
-        int i;
-        int tmp;
+	len = 1;
+	while (n >= 10)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
+}
 
-        tmp = nb;
-        i = 0;
-        while (i < pow)
-        {
-            nb = nb * tmp;
-            i++;
-        }
-        return (nb);
-    }
+long int	power(long int nb, int pow)
+{
+	int	i;
+	int	tmp;
 
-    char    *ft_itoa(int nbr)
-    {
-        int len;
-        int ltz;
-        char *ptr;
-        int i;
-        int temp;
-        long int nb;
+	tmp = nb;
+	i = 0;
+	while (i < pow)
+	{
+		nb = nb * tmp;
+		i++;
+	}
+	return (nb);
+}
 
-        ltz = 0;
-        i = 0;
-        nb = nbr;
-        if (nb < 0)
-        {
-            nb *= -1;
-            ltz = 1;
-        }
-        len = nbr_lng(nb);
-        if(ltz)
-            ptr = (char * )malloc(sizeof(char) * (len + 2));
-        else
-            ptr = (char * )malloc(sizeof(char) * (len + 1));
-        if(!ptr)
-            return (0);
-        if(ltz)
-        {
-            ptr[i] = '-';
-            i++;
-            ptr[len + 2] = '\0';
+void	write_to_str(char *str, int i, int len, long int nb)
+{
+	long int	singl_dig;
+	int			j;
 
-             while (i <= len)
-            {
-                ptr[i] = ft_putnbr(nb);
-                temp = power(10,(len - i - 1));
-                nb = nb % temp;
-                i++;
-            }
-        }
-        else
-        {
-            ptr[len + 1] = '\0';
-                
-            while (i < len)
-            {
-                ptr[i] = ft_putnbr(nb);
-                temp = power(10,(len - i- 2));
-                nb = nb % temp;
-                i++;
-            }
-        }
+	j = 0;
+	while (len > i)
+	{
+		singl_dig = nb % power(10, j);
+		nb -= singl_dig;
+		while (singl_dig >= 10)
+			singl_dig /= 10;
+		str[len - 1] = singl_dig + '0';
+		len--;
+		j++;
+	}
+}
 
-        return (ptr);
-    }
-    int main(int argc,char *argv[])
-    {
-        int lb;
+char	*ft_itoa(int n)
+{
+	long int	tmp;
+	int			i;
+	int			len;
+	int			is_neg;
+	char		*str;
 
-        lb = -98;
-        (void)argc;
-        (void)argv;
-        printf("wynik = %s\n",ft_itoa(lb));
-        //str_prt(ft_itoa(lb));
-        return (0);
-    }
+	i = 0;
+	tmp = n;
+	is_neg = sign_check(&tmp);
+	len = (num_len(tmp) + is_neg);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (is_neg)
+	{
+		str[i] = '-';
+		i++;
+	}
+	write_to_str(str, i, len, tmp);
+	return (str);
+}
+
+/* int	main(void)
+{
+	int num = INT_MIN;
+	char *string;
+
+	string = ft_itoa(num);
+	printf("string = %s\n", string);
+	return (0);
+} */

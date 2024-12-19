@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 12:02:46 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 14:21:07 by gkryszcz         ###   ########.fr       */
+/*   Created: 2024/12/19 14:00:00 by gkryszcz          #+#    #+#             */
+/*   Updated: 2024/12/19 14:02:16 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void ft_putendl_fd(char *s, int fd)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-
-	str1 = s1;
-	str2 = s2;
-	while (n--)
-	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
-	}
-	return (0);
-}
-
-/* int main()
-{
-	char	str[] = {0, 1, 65, 3, 4, 5};
-	char	str2[] = {0, 1, 43, 3, 4, 5};
+	int i;
+	char endl;
 	
-	printf("%d\n", ft_memcmp(str, str2, 2));
-	printf("%d\n", memcmp(str, str2, 2));
-
-}  */
+	i = 0;
+	endl = '\0';
+	while(s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd,&endl,1);
+}
+/* 
+int main()
+{
+	ft_putendl_fd("SDA",2);
+} */
