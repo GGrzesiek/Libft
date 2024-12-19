@@ -6,33 +6,33 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:53:19 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 13:34:39 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:54:52 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* char test_func(unsigned int i, char ch) {
-	return ch + 1;
+	return (ch + 1);
 } */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *newstr;
-	int len;
-	unsigned int i;
+	char			*newstr;
+	int				len;
+	unsigned int	i;
 
 	len = ft_strlen(s);
 	i = 0;
 	newstr = (char *)malloc(sizeof(char) * (len + 1));
-	if(!newstr)
-		return NULL;
-	while(s[i])
+	if (!newstr)
+		return (NULL);
+	while (s[i])
 	{
-		newstr[i] = f(i,s[i]);
+		newstr[i] = f(i, s[i]);
 		i++;
 	}
-	return newstr;
+	return (newstr);
 }
 
 /* int main()
@@ -53,5 +53,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	free(result2);
 	free(result3);
 
-	return 0;
+	return (0);
 } */

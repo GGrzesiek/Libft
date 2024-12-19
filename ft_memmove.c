@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:14:12 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/11 10:54:16 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:00:46 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*t;
 	size_t				siz;
 
+	t = NULL;
 	if (dest == NULL || src == NULL)
 		return (NULL);
 	if (!(mem_overlap(dest, src, n)))
@@ -39,6 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			*t++ = *s++;
 		while (n--)
 			*d++ = *t++;
+		*d = '\0';
 	}
 	else
 		return (NULL);

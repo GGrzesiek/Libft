@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:20:54 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/17 15:28:16 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:55:40 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	sub = (char *)malloc(len);
