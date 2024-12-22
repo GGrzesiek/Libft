@@ -6,43 +6,48 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:14:12 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 15:00:46 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 13:21:59 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-static int	mem_overlap(void *dest, const void *src, size_t n)
-{
-	if (src < dest && src + n < dest)
-		return (1);
-	if (dest < src && dest + n < src)
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
-	unsigned char		*t;
-	size_t				siz;
 
-	t = NULL;
 	if (dest == NULL || src == NULL)
 		return (NULL);
-	if (!(mem_overlap(dest, src, n)))
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	if (d < s)
 	{
-		d = dest;
-		s = src;
-		siz = n;
-		while (siz--)
-			*t++ = *s++;
 		while (n--)
-			*d++ = *t++;
-		*d = '\0';
+			*d++ = *s++;
 	}
 	else
-		return (NULL);
+	{
+		d += n;
+		s += n;
+		while (n--)
+			*--d = *--s;
+	}
 	return (dest);
 }
+
+/* int main() 
+{ 
+    char str1[100] = "Geeks"; // Array of size 100 
+    char str2[5] = "Quiz"; // Array of size 5 
+    printf("str1 before memmove "); 
+    printf("%s",str1); 
+  
+// memmove(str1, str2, sizeof(str2));
+ft_memmove(str1, str2, sizeof(str2));
+printf("\nstr1 after memmove ");
+printf("%s", str1);
+
+return (0);
+}
+*/

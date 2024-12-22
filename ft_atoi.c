@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:52:39 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 14:17:56 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:04:26 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	count = 0;
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
-	while (*nptr == '-' || *nptr == '+')
+	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')
 			count++;
@@ -42,9 +42,9 @@ int	ft_atoi(const char *nptr)
 	int num;
 	char *string;
 
-	string = "-214748364854234234234";
-	// num = ft_atoi(string);
-	// printf("string = %d\n", num);
+	string = "--54";
+	num = ft_atoi(string);
+	printf("string = %d\n", num);
 	num = atoi(string);
 	printf("string = %d\n", num);
 	return (0);

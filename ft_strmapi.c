@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:53:19 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 14:54:52 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:07:26 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		newstr[i] = f(i, s[i]);
 		i++;
 	}
+	newstr[i] = '\0';
 	return (newstr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:48:52 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/18 15:40:55 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 11:56:06 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		w_len;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	w_len = 0;
 	arr = (char **)ft_calloc((w_num(s, c) + 1), sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (s[i++] != 0)
+	while (s[++i] != 0)
 	{
 		if (s[i] != c)
 		{

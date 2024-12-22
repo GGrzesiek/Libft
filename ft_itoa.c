@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 10:33:56 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/19 12:55:00 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 12:00:39 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*ft_itoa(int n)
 	tmp = n;
 	is_neg = sign_check(&tmp);
 	len = (num_len(tmp) + is_neg);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)ft_calloc((sizeof(char) * (len + 1)), sizeof(char));
 	if (!str)
 		return (NULL);
 	if (is_neg)
