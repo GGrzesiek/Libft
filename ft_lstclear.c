@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 17:19:24 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 18:14:11 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:12:41 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *node;
-	t_list *tmp;
-	
+	t_list	*node;
+	t_list	*tmp;
+
 	if (!lst || !del)
 		return ;
 	node = *lst;

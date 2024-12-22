@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 16:41:47 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 16:43:52 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:12:54 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = lst;
 	if (!node)

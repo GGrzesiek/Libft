@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 17:39:23 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 18:31:06 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:13:03 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*node;
-	
+
 	if (!lst || !f || !del)
 		return (NULL);
 	new_list = NULL;

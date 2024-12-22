@@ -6,14 +6,13 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:12:51 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 16:23:44 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:18:10 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ctype.h>
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>

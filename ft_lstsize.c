@@ -6,7 +6,7 @@
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 16:37:26 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 16:41:37 by gkryszcz         ###   ########.fr       */
+/*   Updated: 2024/12/22 21:13:23 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int lng;
-	t_list *tmp;
+	int		lng;
+	t_list	*tmp;
 
 	lng = 0;
 	tmp = lst;
