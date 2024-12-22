@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkryszcz <gkryszcz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 12:35:04 by gkryszcz          #+#    #+#             */
-/*   Updated: 2024/12/22 16:34:04 by gkryszcz         ###   ########.fr       */
+/*   Created: 2024/12/22 16:56:28 by gkryszcz          #+#    #+#             */
+/*   Updated: 2024/12/22 17:50:29 by gkryszcz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	unsigned char	*p;
-
-	p = s;
-	while (n > 0)
+	if (!lst || !del)
+		return ;
+	else
 	{
-		*p = 0;
-		n--;
-		p++;
+		(*del)(lst->content);
+		free(lst);
 	}
 }
